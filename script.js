@@ -1,24 +1,34 @@
 // returns random choice between rock, paper and scissors
 function getComputerChoice() {
   const choice = Math.floor(Math.random() * 3);
-  if (choice === 0){
+  if (choice === 0) {
     return 'rock';
   }
-  else if (choice === 1){
+  else if (choice === 1) {
     return 'paper';
   }
-  else if (choice === 2){
+  else if (choice === 2) {
     return 'scissors';
   } else {
     console.error('invalid computer choice');
   }
 }
 
+function playerChoice() {
+  let i = 0;
+  while (i === 0) {
+    let choice = prompt('Enter rock paper or scissors: ');
+    choice = choice.toLowerCase();
+    if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
+      console.log('You must pick rock, paper, or scissors. Try again.')
+    }
+    else {
+      i = 1;
+      return choice;
+    }
+  }
+}
 
-// Player choice function:
-//  prompt player for choice
-//  change player choice to lowercase 
-//  return player choice
 
 // Play round function:
 //  Compare computer and player choice
