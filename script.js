@@ -29,31 +29,31 @@ function playerChoice() {
   }
 }
 
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === 'rock') {
+    if (computerSelection === 'rock') {
+      return 'tie';
+    } else if (computerSelection === 'paper') {
+      return 'lose';
+    } else return 'win';
+  }
 
-// Play round function:
-//  Compare computer and player choice
+  if (playerSelection === 'paper') {
+    if (computerSelection === 'paper') {
+      return 'tie';
+    } else if (computerSelection === 'scissors') {
+      return 'lose';
+    } else return 'win';
+  }
 
-//    if player chose rock
-//      if computer chose rock
-//        return tie
-//      else if computer chose paper
-//        return lose
-//      else return win
-
-//    if player chose paper
-//      if computer chose paper
-//        return tie
-//      else if computer chose scissors
-//        return lose
-//      else return win
-
-//    if player chose scissors
-//      if computer chose scissors
-//        return tie
-//      else if computer chose rock
-//        return lose
-//      else return win
-
+  if (playerSelection === 'scissors') {
+    if (computerSelection === 'scissors') {
+      return 'tie';
+    } else if (computerSelection === 'rock') {
+      return 'lose';
+    } else return 'win';
+  }
+}
 
 // Game function:
 //  print Let's play Rock Paper Scissors! Best 3 out of 5.
