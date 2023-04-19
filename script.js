@@ -14,7 +14,7 @@ function getComputerChoice() {
   }
 }
 
-function playerChoice() {
+function getPlayerChoice() {
   let i = 0;
   while (i === 0) {
     let choice = prompt('Enter rock paper or scissors: ');
@@ -62,7 +62,7 @@ function game() {
   let result;
   console.log('Let\'s play Rock Paper Scissors! Best 3 out of 5.')
   while (playerScore < 3 && computerScore < 3) {
-    result = playRound(playerChoice(), getComputerChoice());
+    result = playRound(getPlayerChoice(), getComputerChoice());
     if (result === 'win') {
       playerScore++;
       console.log(result);
