@@ -1,15 +1,19 @@
-// Computer choice function:
-//  get random number
-//  multiply by 3
-//  round down to nearest int
-//    if number is 0
-//      return rock
-//    if number is 1
-//      return paper
-//    if number is 2
-//      return scissors
-//    else
-//      return error
+// returns random choice between rock, paper and scissors
+function getComputerChoice() {
+  const choice = Math.floor(Math.random() * 3);
+  if (choice === 0){
+    return 'rock';
+  }
+  else if (choice === 1){
+    return 'paper';
+  }
+  else if (choice === 2){
+    return 'scissors';
+  } else {
+    console.error('invalid computer choice');
+  }
+}
+
 
 // Player choice function:
 //  prompt player for choice
