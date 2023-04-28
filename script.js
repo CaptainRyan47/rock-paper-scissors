@@ -14,20 +14,10 @@ function getComputerChoice() {
   }
 }
 
-function getPlayerChoice() {
-  let i = 0;
-  while (i === 0) {
-    let choice = prompt('Enter rock paper or scissors: ');
-    choice = choice.toLowerCase();
-    if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
-      console.log('You must pick rock, paper, or scissors. Try again.')
-    }
-    else {
-      i = 1;
-      return choice;
-    }
-  }
+function getPlayerChoice(choice) {
+  console.log(choice.id);
 }
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock') {
@@ -88,4 +78,11 @@ function game() {
   }
 }
 
-game();
+// game();
+
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => getPlayerChoice(rock));
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => getPlayerChoice(paper));
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => getPlayerChoice(scissors));
