@@ -14,75 +14,86 @@ function getComputerChoice() {
   }
 }
 
-function getPlayerChoice(choice) {
-  console.log(choice.id);
+function playRound(playerChoice) {
+  compChoice = getComputerChoice();
+  const results = [null, playerChoice, compChoice];
+
+  if (playerChoice === null || playerChoice === undefined) {
+    console.log('!!!!!!!!!');
+    return;
+  }
+
+  if (playerChoice === 'rock') {
+    if (compChoice === 'rock') {
+      results[0] = 'tie';
+      return results;
+    } else if (compChoice === 'paper') {
+      results[0] = 'lose';
+      return results;
+    } else results[0] = 'win';
+    return results;
+  }
+
+  if (playerChoice === 'paper') {
+    if (compChoice === 'paper') {
+      results[0] = 'tie';
+      return results;
+    } else if (compChoice === 'scissors') {
+      results[0] = 'lose';
+      return results;
+    } else results[0] = 'win';
+    return results;
+  }
+
+  if (playerChoice === 'scissors') {
+    if (compChoice === 'scissors') {
+      results[0] = 'tie';
+      return results;
+    } else if (compChoice === 'rock') {
+      results[0] = 'lose';
+      return results;
+    } else results[0] = 'win';
+    return results;
+  }
+
+
+
 }
 
-
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === 'rock') {
-    if (computerSelection === 'rock') {
-      return 'tie';
-    } else if (computerSelection === 'paper') {
-      return 'lose';
-    } else return 'win';
-  }
-
-  if (playerSelection === 'paper') {
-    if (computerSelection === 'paper') {
-      return 'tie';
-    } else if (computerSelection === 'scissors') {
-      return 'lose';
-    } else return 'win';
-  }
-
-  if (playerSelection === 'scissors') {
-    if (computerSelection === 'scissors') {
-      return 'tie';
-    } else if (computerSelection === 'rock') {
-      return 'lose';
-    } else return 'win';
-  }
-}
-
-function game() {
+function game(playerChoice) {
   let playerScore = 0;
   let computerScore = 0;
   let tieCounter = 0;
-  let result;
-  console.log('Let\'s play Rock Paper Scissors! Best 3 out of 5.')
-  while (playerScore < 3 && computerScore < 3) {
-    result = playRound(getPlayerChoice(), getComputerChoice());
-    if (result === 'win') {
-      playerScore++;
-      console.log(result);
-    }
-    if (result === 'lose') {
-      computerScore++;
-      console.log(result);
-    }
-    if (result === 'tie') {
-      tieCounter++;
-      console.log(result);
-    }
+  let results = [];
+
+  results = playRound(playerChoice);
+  if (results[0] === 'win') {
+    playerScore++;
+    console.log(results);
   }
-  if (playerScore >= 3) {
+  if (results[0] === 'lose') {
+    computerScore++;
+    console.log(results);
+  }
+  if (results[0] === 'tie') {
+    tieCounter++;
+    console.log(results);
+  }
+  if (playerScore >= 5) {
     console.log('You win!');
     console.log('Your Score: ' + playerScore);
     console.log('ComputerScore: ' + computerScore);
   }
-  if (computerScore >= 3) {
+  if (computerScore >= 5) {
     console.log('You Lose :(');
     console.log('Your Score: ' + playerScore);
     console.log('ComputerScore: ' + computerScore);
   }
 }
 
-// game();
-
 const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => getPlayerChoice(rock));
+rock.addEventListener('click', () => game(rock.id) );
 const paper = document.querySelector('#paper');
-paper.addEventListener('click', () => getPlayerChoice(paper));
+paper.addEventListener('click', () => game(paper.id));
 const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', () => getPlayerChoice(scissors));
+scissors.addEventListener('click', () => game(scissors.id));
