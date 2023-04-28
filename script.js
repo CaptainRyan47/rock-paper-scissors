@@ -62,17 +62,17 @@ function game(playerChoice) {
 
   results = playRound(playerChoice);
   if (results[0] === 'win') {
-    playerScore++;
+    playerScoreElement.textContent = ++playerScore;
     console.log(results);
     printResults(results);
   }
   if (results[0] === 'lose') {
-    computerScore++;
+    computerScoreElement.textContent = ++computerScore;
     console.log(results);
     printResults(results);
   }
   if (results[0] === 'tie') {
-    tieCounter++;
+    ties.textContent = ++tieCounter;
     console.log(results);
     printResults(results);
   }
@@ -95,7 +95,7 @@ function printResults(results) {
   para.textContent =
     'You ' + results[0] + '! ' + results[1].toUpperCase()
     + ' vs ' + results[2].toUpperCase() + '.';
-  container.appendChild(para);
+  resultsContainer.insertBefore(para, document.querySelector('.results'));
 }
 
 let playerScore = 0;
@@ -109,4 +109,8 @@ paper.addEventListener('click', () => game(paper.id));
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => game(scissors.id));
 
-const container = document.querySelector('#container');
+const buttonsContainer = document.querySelector('#buttons-container');
+const resultsContainer = document.querySelector('#results-container');
+const playerScoreElement = document.querySelector('#player-score');
+const computerScoreElement = document.querySelector('#computer-score');
+const ties = document.querySelector('#ties');
