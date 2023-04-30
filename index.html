@@ -6,20 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sigmar">
+  <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <h1>ROCK PAPER SCISSORS</h1>
+  <header class="flex">
+    <h1>ROCK PAPER SCISSORS</h1>
+  </header>
   <p>Best 5 out of 9</p>
-  <div id="score-container">
+  <div id="score-container" class="grid">
     <h2>SCORE</h2>
     <span>Your Score: </span>
     <span id="player-score">0</span>
-    <p></p>
     <span>Computer Score: </span>
     <span id="computer-score">0</span>
-    <p></p>
     <span>Ties: </span>
     <span id="ties">0</span>
   </div>

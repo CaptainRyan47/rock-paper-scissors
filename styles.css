@@ -1,0 +1,37 @@
+:root {
+  --gray: #454545;
+  --orange: #FF6000;
+  --light-orange: #FFA559;
+  --beige: #FFE6C7;
+}
+
+* ::after ::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Sigmar, Arial, Helvetica, sans-serif;
+  color: var(--beige);
+  background-color: var(--gray);
+}
+
+.flex {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  gap: 1em;
+}
+
+header {
+  background-color: var(--orange);
+  border-radius: 20px;
+}
+
+#score-container {
+  background-color: var(--light-orange);
+  color: var(--gray);
+}
