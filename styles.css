@@ -29,9 +29,27 @@ body {
 header {
   background-color: var(--orange);
   border-radius: 20px;
+  margin-bottom: 30px;
 }
 
 #score-container {
   background-color: var(--light-orange);
   color: var(--gray);
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  padding-bottom: 2em;
+  border-radius: 10px;
+}
+
+#score-container h2 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+#score-header {
+  grid-column: 1/-1;
+}
+
+.score-div {
+  font-size: 1.5rem;
 }
