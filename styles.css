@@ -13,6 +13,8 @@ body {
   font-family: Sigmar, Arial, Helvetica, sans-serif;
   color: var(--beige);
   background-color: var(--gray);
+  max-width: fit-content;
+  margin: 0 auto;
 }
 
 .flex {
@@ -30,6 +32,16 @@ header {
   background-color: var(--orange);
   border-radius: 20px;
   margin-bottom: 30px;
+}
+
+#button-container {
+  margin: 30px 0;
+
+}
+
+#button-container button {
+  font-size: 10rem;
+  border-radius: 10%;
 }
 
 #score-container {
