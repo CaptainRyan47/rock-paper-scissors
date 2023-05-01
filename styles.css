@@ -51,6 +51,7 @@ header {
   text-align: center;
   padding-bottom: 2em;
   border-radius: 10px;
+  font-size: 1.5rem;
 }
 
 #score-container h2 {
@@ -62,6 +63,6 @@ header {
   grid-column: 1/-1;
 }
 
-.score-div {
-  font-size: 1.5rem;
+#results-container {
+  text-align: center;
 }

@@ -77,14 +77,10 @@ function game(playerChoice) {
     printResults(results);
   }
   if (playerScore >= 5) {
-    console.log('You win!');
-    console.log('Your Score: ' + playerScore);
-    console.log('ComputerScore: ' + computerScore);
+    finalResults.textContent = 'YOU WIN!';
   }
   if (computerScore >= 5) {
-    console.log('You Lose :(');
-    console.log('Your Score: ' + playerScore);
-    console.log('ComputerScore: ' + computerScore);
+    finalResults.textContent = 'YOU LOSE';
   }
 }
 
@@ -113,4 +109,4 @@ const buttonsContainer = document.querySelector('#buttons-container');
 const resultsContainer = document.querySelector('#results-container');
 const playerScoreElement = document.querySelector('#player-score');
 const computerScoreElement = document.querySelector('#computer-score');
-const ties = document.querySelector('#ties');
+const finalResults = document.querySelector('#score-header > p');
